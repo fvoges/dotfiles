@@ -21,7 +21,7 @@ then
   fi
 
   # Homebrew should be first so we can override system tools
-  PATH="/usr/local/bin:${PATH/:\/usr\/local\/bin}"
+  PATH="/usr/local/bin:/usr/local/sbin:${PATH/:\/usr\/local\/bin}"
 
   # coreutils should be first
   PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
