@@ -73,7 +73,12 @@ let g:airline_theme='wombat'
 let g:airline#extensions#hunks#enabled = 0
 
 autocmd StdinReadPre * let s:std_in=1
+" Open NERDTree if no file specified
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Open NERDTree automatically when vim starts up on opening a directory
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" Close vim if NERDTree is the last window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 map <C-n> :NERDTreeToggle<CR>
 
