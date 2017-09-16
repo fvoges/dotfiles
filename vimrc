@@ -71,6 +71,8 @@ colorscheme solarized
 let g:airline_powerline_fonts = 1
 let g:airline_theme='wombat'
 let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+
 
 autocmd StdinReadPre * let s:std_in=1
 " Open NERDTree if no file specified

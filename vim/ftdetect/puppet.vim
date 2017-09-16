@@ -1,3 +1,3 @@
-" detect puppet filetype
-au BufRead,BufNewFile *.pp              set filetype=puppet
-au BufRead,BufNewFile *.epp              set filetype=puppet
+au! BufRead,BufNewFile *.pp setfiletype puppet
+au! BufRead,BufNewFile *.epp setfiletype puppet
+au! BufRead,BufNewFile Puppetfile setfiletype ruby
