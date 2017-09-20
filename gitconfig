@@ -1,0 +1,81 @@
+[gpg]
+  program = gpg2
+[credential]
+  helper = cache
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore_global
+[merge]
+  tool = vimdiff
+[color]
+  diff = auto
+  ui = auto
+[filter "media"]
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+[mergetool]
+  keepbackup = true
+[push]
+  default = simple
+[alias]
+  a = add
+  aa = add -A
+  b = branch
+  ba = branch -a
+  bav = branch -av
+  bd = branch -D
+  br = branch
+  bv = branch -avv
+  c = commit
+  ca = commit -a
+  cam = commit -a -m
+  cm = commit -m
+  co = checkout
+  cp = cherry-pick
+  d = diff
+  dc = diff --cached
+  df = diff
+  dn = diff --numstat
+  ds = diff --staged
+  dst = diff --stat
+  hist = log --pretty=format:'%h %ad | %s%d [%an <%ae>]' --graph --date=short
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lu = log -u --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  l1 = log --pretty=oneline
+  lg = log -p
+  log-date = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  m = commit -m
+  p = push
+  pa = push --all
+  pt = push --tags
+  rv = remote -v
+  s = status
+  st = status
+  undo-commit = reset --soft HEAD^
+  tree = log --oneline --decorate --graph
+  bd = branch -D
+  ap = add -p
+  dt = difftool
+  mt = mergetool
+  dw = diff -w
+  dcw = diff --cached -w
+[gitflow "prefix"]
+  feature = feature/
+  release = release/
+  hotfix = hotfix/
+  support = support/
+  versiontag = v
+[fetch]
+  prune = true
+[color "diff"]
+  whitespace = red reverse
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[include]
+  path = ~/.gitconfig.local
+
