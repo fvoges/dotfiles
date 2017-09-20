@@ -3,7 +3,7 @@
 # Find the script dir
 SRCDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P )"
 
-RCFILES="bashrc minttyrc vimrc vim screenrc tmux.conf gemrc"
+RCFILES="bashrc minttyrc vimrc vim screenrc tmux.conf gemrc gitconfig"
 
 # ANSI COLOR CODES
 
