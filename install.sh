@@ -87,5 +87,10 @@ test $? == 0 && let count++
 create_link ${SRCDIR} gemrc pre-rcfiles
 test $? == 0 && let count++
 
+# gitconfig
+create_link ${SRCDIR} gitconfig pre-rcfiles
+test $? == 0 && let count++
+test -f ~/.gitconfig.local || touch ~/.gitconfig.local
 
 echo -e "${INFO} Files modified: ${count}"
+
