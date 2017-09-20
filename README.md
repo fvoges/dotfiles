@@ -2,7 +2,7 @@
 
 My own collection of rcfiles for UNIX shells.
 
-**NOTE:** This is provided AS IS. No guaranties. I'm not responsible if this eats your files, or lunch, does anything you don't like, etc. Use at your own risk.
+**NOTE:** This is provided AS IS. No warrenty. I'm not responsible if this eats your files, or lunch, does anything you don't like, etc. Use at your own risk.
 
 ## What is this?
 
@@ -23,6 +23,31 @@ The install process is simple, clone into a directory (I use $HOME/src/rcfiles),
 The install script tries to preserve the existing files. But you should definitely check the script before running it.
 
 After installing the rcfiles, you need to reload your environment (just run `exec bash`).
+
+### Git config
+
+This will also take over your Git config file. But if you use Git for both work and personal stuff, then chances are that you require more than one configuration. At least to change your email address.
+
+To deal with that, the `gitconfig` in the repo uses the include option to load `~/.gitconfig.local`. Below, you can see what kind of options I keep in the local file.
+
+```ini
+# Example contents for ~/.gitconfig.local
+[user]
+  name = Your Name
+  email = Your.Name@example.com
+  signingkey = FEFEFEFEF
+[commit]
+  gpgsign = true
+[github]
+  user = example
+```
+
+To manage options inside the local file, you can use the `-f` command line option for `git config`.
+
+```sh
+git config -f ~/.gitconfig.local user.name 'Your Name'
+git config -f ~/.gitconfig.local user.email 'Your.Name@example.com'
+```
 
 ## Why not use some more advanced shell prompt?
 
