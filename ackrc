@@ -1,0 +1,6 @@
+--type-set=pp:ext:pp
+--type-set=epp:ext:epp
+--type-set=erb:ext:erb
+--type-set=puppet:ext:pp,epp,erb
+--type-add=yaml:ext:yaml,eyaml
+
