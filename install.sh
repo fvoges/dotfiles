@@ -87,6 +87,10 @@ test $? == 0 && let count++
 create_link ${SRCDIR} gemrc pre-rcfiles
 test $? == 0 && let count++
 
+# ackrc
+create_link ${SRCDIR} ackrc pre-rcfiles
+test $? == 0 && let count++
+
 # gitconfig
 create_link ${SRCDIR} gitconfig pre-rcfiles
 test $? == 0 && let count++
