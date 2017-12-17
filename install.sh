@@ -75,6 +75,12 @@ test $? == 0 && let count++
 create_link ${SRCDIR} vim pre-rcfiles
 test $? == 0 && let count++
 
+# mutt
+create_link ${SRCDIR} muttrc pre-rcfiles
+test $? == 0 && let count++
+create_link ${SRCDIR} mutt pre-rcfiles
+test $? == 0 && let count++
+
 # screenc
 create_link ${SRCDIR} screenrc pre-rcfiles
 test $? == 0 && let count++
