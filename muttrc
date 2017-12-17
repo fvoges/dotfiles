@@ -91,3 +91,6 @@ subscribe "gentoo-.*@gentoo\\.org"
 # SMTP mailing configuration (for sending mail)
 #set smtp_url=smtp://mail.server/
 
+# allow local customization
+source ~/.muttrc.local
+

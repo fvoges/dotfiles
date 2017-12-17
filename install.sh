@@ -80,6 +80,9 @@ create_link ${SRCDIR} muttrc pre-rcfiles
 test $? == 0 && let count++
 create_link ${SRCDIR} mutt pre-rcfiles
 test $? == 0 && let count++
+test -f ~/.muttrc.local || touch ~/.muttrc.local
+test -f ~/.aliases || touch ~/.aliases
+test -f ~/.signature || touch ~/.signature
 
 # screenc
 create_link ${SRCDIR} screenrc pre-rcfiles
