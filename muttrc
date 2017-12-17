@@ -1,0 +1,96 @@
+
+#source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
+source $HOME/.mutt/mutt-colors-solarized/mutt-colors-solarized-light-256.muttrc
+
+# character set on messages that we send
+set send_charset="utf-8"
+# if there is no character set given on incoming messages, it is probably windows
+set assumed_charset="iso-8859-1"
+
+# make sure Vim knows mutt is a mail client and that we compose an UTF-8 encoded message
+set editor="vim -c 'set syntax=mail ft=mail enc=utf-8'"
+
+# just scroll one line instead of full page
+set menu_scroll=yes
+
+# we want to see some MIME types inline, see below this code listing for explanation
+auto_view application/msword
+auto_view application/pdf
+
+# make default search pattern to search in To, Cc and Subject
+set simple_search="~f %s | ~C %s | ~s %s"
+
+# threading preferences, sort by threads
+set sort=threads
+set strict_threads=yes
+
+# show spam score (from SpamAssassin only) when reading a message
+spam "X-Spam-Score: ([0-9\\.]+).*" "SA: %1"
+set pager_format = " %C - %[%H:%M] %.20v, %s%* %?H? [%H] ?"
+
+# do not show all headers, just a few
+ignore          *
+unignore        From To Cc Bcc Date Subject
+# and in this order
+unhdr_order     *
+hdr_order       From: To: Cc: Bcc: Date: Subject:
+
+# brighten up stuff with colours, for more colouring examples see:
+# http://aperiodic.net/phil/configs/mutt/colors
+#color normal      white          black
+#color hdrdefault  green          default
+#color quoted      green          default
+#color quoted1     yellow         default
+#color quoted2     red            default
+#color signature   cyan           default
+#color indicator   brightyellow   red
+#color error       brightred      default
+#color status      brightwhite    blue
+#color tree        brightmagenta  black
+#color tilde       blue           default
+#color attachment  brightyellow   default
+#color markers     brightred      default
+#color message     white          black
+#color search      brightwhite    magenta
+#color bold        brightyellow   default
+# if you don't like the black progress bar at the bottom of the screen,
+# comment out the following line
+#color progress    white          black
+
+# personality settings
+#set realname = "Andrew Dalziel"
+#set from = "andy@mail.server"
+#alternates "andrew@mail.server|andrew.dalziel@mail.server"
+# this file must exist, and contains your signature, comment it out if
+# you don't want a signature to be used
+set signature = ~/.signature
+
+# aliases (sort of address book)
+source ~/.aliases
+
+# IMAP connection settings
+set mail_check=60
+set imap_keepalive=300
+
+# IMAP account settings
+#set folder=imaps://andy@imap.mail.server/
+#set spoolfile=imaps://andy@imap.mail.server/
+#set record=imaps://andy@imap.mail.server/Sent
+#set postponed=imaps://andy@imap.mail.server/Drafts
+
+# use headercache for IMAP (make sure this is a directory for performance!)
+set header_cache=/var/tmp/.mutt
+
+# mailboxes we want to monitor for new mail
+mailboxes "="
+mailboxes "=Lists"
+
+# mailing lists we are on (these are regexps!)
+subscribe "gentoo-.*@gentoo\\.org"
+
+# SMTP mailing configuration (for sending mail)
+#set smtp_url=smtp://mail.server/
+
+# allow local customization
+source ~/.muttrc.local
+
