@@ -27,6 +27,8 @@
   ba = branch -a
   bav = branch -av
   bd = branch -D
+  bm = branch --merged
+  bmv = branch -v --merged
   br = branch
   bv = branch -avv
   c = commit
