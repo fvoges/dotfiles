@@ -42,24 +42,25 @@ fi
 
 test -f /usr/local/etc/bash_completion && source /usr/local/etc/bash_completion
 
-if [ "$SHELL" = "/bin/bash" ]
-then
-  # Change the window title of X terminals
-  case ${TERM} in
-    xterm*|rxvt*|Eterm|aterm|kterm|gnome*|interix)
-      PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
-      ;;
-    screen*)
-      PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\033\\"'
-      ;;
-  esac
+case "$SHELL" in
+  */bin/bash)
+    # Change the window title of X terminals
+    case ${TERM} in
+      xterm*|rxvt*|Eterm|aterm|kterm|gnome*|interix)
+        PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"'
+        ;;
+      screen*)
+        PROMPT_COMMAND='echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\033\\"'
+        ;;
+    esac
 
-  if [[ ${EUID} == 0 ]] ; then
-    PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
-  else
-    PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \W \$\[\033[00m\] '
-  fi
-fi
+    if [[ ${EUID} == 0 ]] ; then
+      PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
+    else
+      PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \W \$\[\033[00m\] '
+    fi
+  ;;
+esac
 
 SSH_ENV=$HOME/.ssh/environment
 
