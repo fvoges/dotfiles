@@ -3,4 +3,5 @@
 --type-set=erb:ext:erb
 --type-set=puppet:ext:pp,epp,erb
 --type-add=yaml:ext:yaml,eyaml
+--type-add=md:ext:md
 
