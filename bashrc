@@ -1,5 +1,8 @@
 # ex: set et sw=2 ts=2 filetype=sh:
 # This will normally be the backup of the default .bashrc
+
+PATH="${PATH//$HOME\/.rbenv\/shims:}"
+
 test -f ~/.bashrc.local && source ~/.bashrc.local
 
 export EDITOR=vim
@@ -16,31 +19,32 @@ if [ "$(uname -s)" == "Darwin" ]
 then
   if [ -d /opt/boxen ]
   then
-    PATH="/usr/local/sbin:/usr/local/bin:/opt/boxen/homebrew/bin:$PATH"
-    PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+    # Include Boxen environment (if present)
+    test -f /opt/boxen/env.sh && source /opt/boxen/env.sh
+
+    PATH="/opt/boxen/homebrew/bin:${PATH//\/opt\/boxen\/homebrew\/bin:}"
   fi
 
   # Homebrew should be first so we can override system tools
-  PATH="/usr/local/bin:/usr/local/sbin:${PATH/:\/usr\/local\/bin}"
+  PATH="/usr/local/bin:${PATH//\/usr\/local\/bin:}"
+  PATH="/usr/local/sbin:${PATH//\/usr\/local\/sbin:}"
 
   # coreutils should be first
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+  COREUTILS_PREFIX=$(brew --prefix)
+  PATH="${COREUTILS_PREFIX}/libexec/gnubin:${PATH//${COREUTILS_PREFIX}\/libexec\/gnubin:}"
+  MANPATH="${COREUTILS_PREFIX}/libexec/gnuman:$MANPATH"
 
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
-
+  HOMEBREW_PREFIX=$(brew --prefix)
+  test -f "${HOMEBREW_PREFIX}/etc/bash_completion" && source "${HOMEBREW_PREFIX}/etc/bash_completion"
 fi
-PATH="$PATH:$HOME/bin"
+
+PATH="${PATH//:$HOME\/bin}:$HOME/bin"
 
 # Check for rbenv
 if which rbenv >& /dev/null
 then
   eval "$(rbenv init -)"
 fi
-
-test -f /usr/local/etc/bash_completion && source /usr/local/etc/bash_completion
 
 case "$SHELL" in
   */bin/bash)
@@ -91,9 +95,6 @@ then
   fi
 fi
 
-# Include Boxen environment (if present)
-test -f /opt/boxen/env.sh && source /opt/boxen/env.sh
-
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
@@ -105,4 +106,3 @@ then
   GIT_PROMPT_THEME=Single_line_Solarized
   source ~/.bash-git-prompt/gitprompt.sh
 fi
-
