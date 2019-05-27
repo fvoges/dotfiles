@@ -97,32 +97,6 @@ test -f /opt/boxen/env.sh && source /opt/boxen/env.sh
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-if [ -f ~/.bash-git-prompt/gitprompt.sh ]
-then
-  # Set config variables first
-  GIT_PROMPT_ONLY_IN_REPO=1
-
-  # GIT_PROMPT_FETCH_REMOTE_STATUS=0   # uncomment to avoid fetching remote status
-
-  GIT_PROMPT_SHOW_UPSTREAM=1 # uncomment to show upstream tracking branch
-  # GIT_PROMPT_SHOW_UNTRACKED_FILES=all # can be no, normal or all; determines counting of untracked files
-
-  # GIT_PROMPT_SHOW_CHANGED_FILES_COUNT=0 # uncomment to avoid printing the number of changed files
-
-  # GIT_PROMPT_STATUS_COMMAND=gitstatus_pre-1.7.10.sh # uncomment to support Git older than 1.7.10
-
-  # GIT_PROMPT_START=...    # uncomment for custom prompt start sequence
-  # GIT_PROMPT_END=...      # uncomment for custom prompt end sequence
-
-  # as last entry source the gitprompt script
-  # GIT_PROMPT_THEME=Custom # use custom theme specified in file GIT_PROMPT_THEME_FILE (default ~/.git-prompt-colors.sh)
-  # GIT_PROMPT_THEME_FILE=~/.git-prompt-colors.sh
-  # GIT_PROMPT_THEME=Solarized # use theme optimized for solarized color scheme
-  GIT_PROMPT_THEME=Single_line_Solarized
-  source ~/.bash-git-prompt/gitprompt.sh
-fi
-
-
 if [ -f  ~/.bash-git-prompt/gitprompt.sh ]
 then
   GIT_PROMPT_ONLY_IN_REPO=1
@@ -131,3 +105,4 @@ then
   GIT_PROMPT_THEME=Single_line_Solarized
   source ~/.bash-git-prompt/gitprompt.sh
 fi
+
