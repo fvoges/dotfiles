@@ -31,7 +31,7 @@ then
 
   # coreutils should be first
   COREUTILS_PREFIX=$(brew --prefix)
-  PATH="${COREUTILS_PREFIX}/libexec/gnubin:${PATH//${COREUTILS_PREFIX}\/libexec\/gnubin:}"
+  PATH="${COREUTILS_PREFIX}/opt/coreutils/libexec/gnubin:${PATH//${COREUTILS_PREFIX}\/libexec\/gnubin:}"
   MANPATH="${COREUTILS_PREFIX}/libexec/gnuman:$MANPATH"
 
   HOMEBREW_PREFIX=$(brew --prefix)
