@@ -30,12 +30,17 @@ then
   PATH="/usr/local/sbin:${PATH//\/usr\/local\/sbin:}"
 
   # coreutils should be first
-  COREUTILS_PREFIX=$(brew --prefix)
-  PATH="${COREUTILS_PREFIX}/opt/coreutils/libexec/gnubin:${PATH//${COREUTILS_PREFIX}\/libexec\/gnubin:}"
-  MANPATH="${COREUTILS_PREFIX}/libexec/gnuman:$MANPATH"
+  BREW_PREFIX=$(brew --prefix)
 
-  HOMEBREW_PREFIX=$(brew --prefix)
-  test -f "${HOMEBREW_PREFIX}/etc/bash_completion" && source "${HOMEBREW_PREFIX}/etc/bash_completion"
+  PATH="${BREW_PREFIX}/opt/python/libexec/bin:${PATH//${BREW_PREFIX}\/libexec\/bin:}"
+  PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH//${BREW_PREFIX}\/libexec\/gnubin:}"
+  PATH="${BREW_PREFIX}/opt/python@3/bin:${PATH}"
+  MANPATH="${BREW_PREFIX}/libexec/gnuman:$MANPATH"
+
+  test -f "${BREW_PREFIX}/etc/bash_completion" && source "${BREW_PREFIX}/etc/bash_completion"
+else
+  PATH="${PATH//\/usr\/local\/bin:}:/usr/local/bin"
+  PATH="${PATH//\/usr\/local\/sbin:}:/usr/local/sbin"
 fi
 
 PATH="${PATH//:$HOME\/bin}:$HOME/bin"
