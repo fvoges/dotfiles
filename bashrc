@@ -115,6 +115,9 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
+GPG_TTY=$(tty)
+export GPG_TTY
+
 export HISTCONTROL="ignoreboth"
 export HISTSIZE="-1"
 export HISTIGNORE="rm -rf*:cd:ll:ls:clear:pwd:[bf]g"
