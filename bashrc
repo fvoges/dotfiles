@@ -80,7 +80,7 @@ function start_agent {
 if [ -t 0 ]
 then
   # Check if $HOME/.ssh exists before starting ssh-agent
-  if [ -d $HOME/.ssh ]
+  if [ -d $HOME/.ssh -a -f  $HOME/.ssh/start_ssh_agent ]
   then
     # Source SSH settings, if applicable
     if [ -f "${SSH_ENV}" ]; then
