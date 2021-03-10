@@ -111,3 +111,7 @@ then
   GIT_PROMPT_THEME=Single_line_Solarized
   source ~/.bash-git-prompt/gitprompt.sh
 fi
+
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
