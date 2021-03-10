@@ -115,3 +115,7 @@ fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
+export HISTCONTROL="ignoreboth"
+export HISTSIZE="-1"
+export HISTIGNORE="rm -rf*:cd:ll:ls:clear:pwd:[bf]g"
+
