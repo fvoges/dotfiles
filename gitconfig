@@ -25,11 +25,9 @@
   ap = add -p
   b = branch
   ba = branch -a
-  bav = branch -av
   bd = branch -D
   bm = branch --merged
   bmv = branch -v --merged
-  br = branch
   bv = branch -avv
   c = commit
   ca = commit -a
@@ -40,22 +38,19 @@
   d = diff
   dc = diff --cached
   dcw = diff --cached -w
-  df = diff
   dn = diff --numstat
   ds = diff --staged
   dst = diff --stat
   dt = difftool
   dtc = difftool --cached
   dw = diff -w
-  hist = log --pretty=format:'%h %ad | %s%d [%an <%ae>]' --graph --date=short
-  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  fa = fetch --all
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative
   l1 = log --pretty=oneline
   lg = log -p
-  log-date = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
-  lu = log -u --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  luw = log -u -w --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  ld = log --pretty=format:'%C(red)%H%C(reset) %C(yellow)%ai%C(reset) %C(blue)%<(25)%an%C(reset) %C(green)%d%C(reset) %s' --date=short
+  lu = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative -u
+  luw = log --graph --pretty=format:'%C(red)%h%C(reset) -%C(yellow)%d%C(reset) %s %C(green)(%cr) %C(bold blue)<%an>%C(reset)' --abbrev-commit --date=relative -u -w
   m = commit -m
   mt = mergetool
   p = push
@@ -63,7 +58,6 @@
   pt = push --tags
   rv = remote -v
   s = status
-  st = status
   tree = log --oneline --decorate --graph
   undo-commit = reset --soft HEAD^
 [gitflow "prefix"]
