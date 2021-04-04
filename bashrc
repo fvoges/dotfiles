@@ -119,7 +119,6 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 export HISTCONTROL="ignoreboth"
-export HISTSIZE="-1"
+export HISTSIZE="1000000"
 export HISTIGNORE="rm -rf*:cd:ll:ls:clear:pwd:[bf]g"
 export HISTTIMEFORMAT="%F %T "
-
