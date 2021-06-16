@@ -37,11 +37,26 @@ then
   PATH="${BREW_PREFIX}/opt/python@3/bin:${PATH}"
   MANPATH="${BREW_PREFIX}/libexec/gnuman:$MANPATH"
 
+  # old bash-completion
   test -f "${BREW_PREFIX}/etc/bash_completion" && source "${BREW_PREFIX}/etc/bash_completion"
+  # new bash-completion (for bash version >=4)
+  test -f "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" && source "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
 else
   PATH="${PATH//\/usr\/local\/bin:}:/usr/local/bin"
   PATH="${PATH//\/usr\/local\/sbin:}:/usr/local/sbin"
 fi
+
+test -f /etc/bash_completion && source /etc/bash_completion
+
+# autocomplete for all the hashicorp tools
+test -x /usr/local/bin/boundary && complete -C /usr/local/bin/boundary boundary 2>&1 /dev/null
+test -x /usr/local/bin/consul && complete -C /usr/local/bin/consul consul 2>&1 /dev/null
+test -x /usr/local/bin/nomad && complete -C /usr/local/bin/nomad nomad 2>&1 /dev/null
+# test -x /usr/local/bin/packer && complete -C /usr/local/bin/packer packer 2>&1 /dev/null
+test -x /usr/local/bin/terraform && complete -C /usr/local/bin/terraform terraform 2>&1 /dev/null
+# test -x /usr/local/bin/vagrant && complete -C /usr/local/bin/vagrant vagrant 2>&1 /dev/null
+test -x /usr/local/bin/vault && complete -C /usr/local/bin/vault vault 2>&1 /dev/null
+test -x /usr/local/bin/waypoint && complete -C /usr/local/bin/waypoint waypoint 2>&1 /dev/null
 
 PATH="${PATH//:$HOME\/bin}:$HOME/bin"
 
