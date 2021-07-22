@@ -1,8 +1,10 @@
-# RCFILES
+# DOTFILES
+
+> ℹ️ The repo has been renamed to make it compatible with [Strap](https://github.com/MikeMcQuaid/strap).
 
 My own collection of rcfiles for UNIX shells.
 
-**NOTE:** This is provided AS IS. No warrenty. I'm not responsible if this eats your files, or lunch, does anything you don't like, etc. Use at your own risk.
+**NOTE:** This is provided AS IS. No warranty. I'm not responsible if this eats your files, or lunch, does anything you don't like, etc. Use at your own risk.
 
 ## What is this?
 
