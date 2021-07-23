@@ -59,7 +59,10 @@ function MyDiff()
         \  " > " . v:fname_out
 endfunction
 
-set diffopt+=iwhite
+if &diff
+    set diffopt-=internal
+    set diffopt+=iwhite
+endif
 
 set mouse=a
 
