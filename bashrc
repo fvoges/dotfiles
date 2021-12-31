@@ -17,30 +17,28 @@ alias be="bundle exec"
 # Mac OS X
 if [ "$(uname -s)" == "Darwin" ]
 then
-  if [ -d /opt/boxen ]
+  which -s brew
+  if [ $? -eq 0 ]
   then
-    # Include Boxen environment (if present)
-    test -f /opt/boxen/env.sh && source /opt/boxen/env.sh
+    BREW_PREFIX=$(brew --prefix)
 
-    PATH="/opt/boxen/homebrew/bin:${PATH//\/opt\/boxen\/homebrew\/bin:}"
+    # Homebrew (/usr/local) should be first so we can override system tools
+    PATH="/usr/local/bin:${PATH//\/usr\/local\/bin:}"
+    PATH="/usr/local/sbin:${PATH//\/usr\/local\/sbin:}"
+
+    # coreutils should be first
+    PATH="${BREW_PREFIX}/opt/python/libexec/bin:${PATH//${BREW_PREFIX}\/libexec\/bin:}"
+    PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH//${BREW_PREFIX}\/libexec\/gnubin:}"
+
+    test -d "${BREW_PREFIX}/opt/python@3/bin" && PATH="${BREW_PREFIX}/opt/python@3/bin:${PATH}"
+
+    MANPATH="${BREW_PREFIX}/libexec/gnuman:$MANPATH"
+
+    # old bash-completion
+    test -f "${BREW_PREFIX}/etc/bash_completion" && source "${BREW_PREFIX}/etc/bash_completion"
+    # new bash-completion (for bash version >=4)
+    test -f "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" && source "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
   fi
-
-  # Homebrew should be first so we can override system tools
-  PATH="/usr/local/bin:${PATH//\/usr\/local\/bin:}"
-  PATH="/usr/local/sbin:${PATH//\/usr\/local\/sbin:}"
-
-  # coreutils should be first
-  BREW_PREFIX=$(brew --prefix)
-
-  PATH="${BREW_PREFIX}/opt/python/libexec/bin:${PATH//${BREW_PREFIX}\/libexec\/bin:}"
-  PATH="${BREW_PREFIX}/opt/coreutils/libexec/gnubin:${PATH//${BREW_PREFIX}\/libexec\/gnubin:}"
-  PATH="${BREW_PREFIX}/opt/python@3/bin:${PATH}"
-  MANPATH="${BREW_PREFIX}/libexec/gnuman:$MANPATH"
-
-  # old bash-completion
-  test -f "${BREW_PREFIX}/etc/bash_completion" && source "${BREW_PREFIX}/etc/bash_completion"
-  # new bash-completion (for bash version >=4)
-  test -f "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" && source "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
 else
   PATH="${PATH//\/usr\/local\/bin:}:/usr/local/bin"
   PATH="${PATH//\/usr\/local\/sbin:}:/usr/local/sbin"
@@ -137,3 +135,4 @@ export HISTCONTROL="ignoreboth"
 export HISTSIZE="1000000"
 export HISTIGNORE="rm -rf*:cd:ll:ls:clear:pwd:[bf]g"
 export HISTTIMEFORMAT="%F %T "
+
