@@ -1,1 +1,6 @@
 #!/bin/bash
+
+git clone https://github.com/fvoges/bash-git-prompt ~/.bash-git-prompt
+
+defaults write com.apple.Finder AppleShowAllFiles true
+killall Finder

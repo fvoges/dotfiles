@@ -1,3 +1,5 @@
+--type-set=terraform:ext:tf
+--type-set=tf:ext:tf
 --type-set=pp:ext:pp
 --type-set=epp:ext:epp
 --type-set=erb:ext:erb
