@@ -61,5 +61,21 @@ bindkey -m "^[[6;2~" stuff ^f
 
 bind R eval "source ~/.screenrc" "echo '.screenrc reloaded!'"
 
+# FV allow easy switching to sessions 10-19
+# https://www.gnu.org/software/screen/manual/html_node/Bind-Examples.html
+# https://www.gnu.org/software/screen/manual/html_node/Bind.html#Bind
+# https://www.gnu.org/software/screen/manual/html_node/Command-Character.html#index-command
+bind -c extra 0 select 10
+bind -c extra 1 select 11
+bind -c extra 2 select 12
+bind -c extra 3 select 13
+bind -c extra 4 select 14
+bind -c extra 5 select 15
+bind -c extra 6 select 16
+bind -c extra 7 select 17
+bind -c extra 8 select 18
+bind -c extra 9 select 19
+bind - command -c extra
+
 source ${HOME}/.screenrc.local
 
