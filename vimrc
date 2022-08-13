@@ -102,7 +102,9 @@ endif
 " match trailing spaces and tab characters
 :match ExtraWhitespace /\s\+$\|\ze\t/
 
+" https://www.wiserfirst.com/blog/vim-tip-snipmate-legacy-parser-warning/
 let g:snipMate = { 'snippet_version' : 1 }
 
+" Generate help tags on start up
 autocmd VimEnter helptags ALL
 
