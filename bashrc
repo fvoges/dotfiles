@@ -136,3 +136,24 @@ export HISTSIZE="1000000"
 export HISTIGNORE="rm -rf*:cd:ll:ls:clear:pwd:[bf]g"
 export HISTTIMEFORMAT="%F %T "
 
+
+# for COMPLETION in /usr/local/etc/bash_completion.d/*
+# do
+# echo $COMPLETION
+#   source $COMPLETION
+# done
+
+. /usr/local/etc/bash_completion.d/git-completion.bash
+
+# Check for kubectl
+if which kubectl >& /dev/null
+then
+  # from: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+  alias k=kubectl
+  alias kx='f() { [ "$1" ] && kubectl config use-context $1 || kubectl config current-context ; } ; f'
+  alias kn='f() { [ "$1" ] && kubectl config set-context --current --namespace $1 || kubectl config view --minify | grep namespace | cut -d" " -f6 ; } ; f'
+
+  complete -o default -F __start_kubectl k
+fi
+alias myip='curl -s "https://api.ipify.org"'
+
