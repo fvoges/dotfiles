@@ -1,1 +1,2 @@
-au BufRead,BufNewFile /etc/nginx/* set ft=nginx 
+au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
+

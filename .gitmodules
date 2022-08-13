@@ -1,0 +1,99 @@
+[submodule "vim/pack/plugins/start/tabular"]
+	path = vim/pack/plugins/start/tabular
+	url = https://github.com/godlygeek/tabular
+[submodule "vim/pack/plugins/start/Align"]
+	path = vim/pack/plugins/start/Align
+	url = https://github.com/vim-scripts/Align
+[submodule "vim/pack/plugins/start/nerdtree"]
+	path = vim/pack/plugins/start/nerdtree
+	url = https://github.com/preservim/nerdtree
+[submodule "vim/pack/plugins/start/vim-airline"]
+	path = vim/pack/plugins/start/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim/pack/plugins/start/vim-airline-themes"]
+	path = vim/pack/plugins/start/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "vim/pack/plugins/start/vim-bundler"]
+	path = vim/pack/plugins/start/vim-bundler
+	url = https://github.com/tpope/vim-bundler
+[submodule "vim/pack/plugins/start/diffchar.vim"]
+	path = vim/pack/plugins/start/diffchar.vim
+	url = https://github.com/rickhowe/diffchar.vim
+[submodule "vim/pack/plugins/start/vim-fugitive"]
+	path = vim/pack/plugins/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/pack/plugins/start/vim-gitgutter"]
+	path = vim/pack/plugins/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
+[submodule "vim/pack/plugins/start/vim-sensible"]
+	path = vim/pack/plugins/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible
+[submodule "vim/pack/plugins/start/vim-snipmate"]
+	path = vim/pack/plugins/start/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate
+[submodule "vim/pack/plugins/start/vim-startify"]
+	path = vim/pack/plugins/start/vim-startify
+	url = https://github.com/mhinz/vim-startify
+[submodule "vim/pack/plugins/start/vim-surround"]
+	path = vim/pack/plugins/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/pack/plugins/start/vim-hashicorp-tools"]
+	path = vim/pack/plugins/start/vim-hashicorp-tools
+	url = https://github.com/hashivim/vim-hashicorp-tools
+[submodule "vim/pack/plugins/start/vim-puppet"]
+	path = vim/pack/plugins/start/vim-puppet
+	url = https://github.com/rodjek/vim-puppet
+[submodule "vim/pack/plugins/start/vim-desert256"]
+	path = vim/pack/plugins/start/vim-desert256
+	url = https://github.com/brafales/vim-desert256
+[submodule "vim/pack/plugins/start/vim-colors-solarized"]
+	path = vim/pack/plugins/start/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule "vim/pack/plugins/start/vim-wombat256mod"]
+	path = vim/pack/plugins/start/vim-wombat256mod
+	url = https://github.com/michalbachowski/vim-wombat256mod
+[submodule "vim/pack/plugins/start/dhcpd.vim"]
+	path = vim/pack/plugins/start/dhcpd.vim
+	url = https://github.com/vim-scripts/dhcpd.vim
+[submodule "vim/pack/plugins/start/vim-json"]
+	path = vim/pack/plugins/start/vim-json
+	url = https://github.com/elzr/vim-json
+[submodule "vim/pack/plugins/start/openhab-vim"]
+	path = vim/pack/plugins/start/openhab-vim
+	url = https://github.com/cyberkov/openhab-vim
+[submodule "vim/pack/plugins/start/nginx.vim"]
+	path = vim/pack/plugins/start/nginx.vim
+	url = https://github.com/vim-scripts/nginx.vim
+[submodule "vim/pack/plugins/start/vim-kickstart"]
+	path = vim/pack/plugins/start/vim-kickstart
+	url = https://github.com/sealeg/vim-kickstart
+[submodule "vim/pack/plugins/start/vim-arduino"]
+	path = vim/pack/plugins/start/vim-arduino
+	url = https://github.com/stevearc/vim-arduino
+[submodule "vim/pack/plugins/start/vim-snippets"]
+	path = vim/pack/plugins/start/vim-snippets
+	url = https://github.com/honza/vim-snippets
+[submodule "vim/pack/plugins/start/vim-go"]
+	path = vim/pack/plugins/start/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule "vim/pack/plugins/start/ale"]
+	path = vim/pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "vim/pack/plugins/start/fzf.vim"]
+	path = vim/pack/plugins/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/pack/plugins/start/vim-markdown"]
+	path = vim/pack/plugins/start/vim-markdown
+	url = https://github.com/preservim/vim-markdown
+[submodule "vim/pack/plugins/start/vim-git"]
+	path = vim/pack/plugins/start/vim-git
+	url = https://github.com/tpope/vim-git
+[submodule "vim/pack/plugins/start/vim-hcl"]
+	path = vim/pack/plugins/start/vim-hcl
+	url = https://github.com/jvirtanen/vim-hcl
+[submodule "vim/pack/plugins/start/vim-addon-mw-utils"]
+	path = vim/pack/plugins/start/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "vim/pack/plugins/start/tlib_vim"]
+	path = vim/pack/plugins/start/tlib_vim
+	url = https://github.com/tomtom/tlib_vim.git

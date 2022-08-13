@@ -102,3 +102,7 @@ endif
 " match trailing spaces and tab characters
 :match ExtraWhitespace /\s\+$\|\ze\t/
 
+let g:snipMate = { 'snippet_version' : 1 }
+
+autocmd VimEnter helptags ALL
+
