@@ -143,7 +143,7 @@ export HISTTIMEFORMAT="%F %T "
 #   source $COMPLETION
 # done
 
-. /usr/local/etc/bash_completion.d/git-completion.bash
+test -f /usr/local/etc/bash_completion.d/git-completion.bash && source /usr/local/etc/bash_completion.d/git-completion.bash
 
 # Check for kubectl
 if which kubectl >& /dev/null
