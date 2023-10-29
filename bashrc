@@ -58,6 +58,8 @@ test -x /usr/local/bin/waypoint && complete -C /usr/local/bin/waypoint waypoint 
 
 PATH="${PATH//:$HOME\/bin}:$HOME/bin"
 
+test -d "${HOME}/.rbenv" && PATH="${PATH}:${HOME}/.rbenv/bin"
+
 # Check for rbenv
 if which rbenv >& /dev/null
 then
