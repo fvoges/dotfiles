@@ -100,3 +100,6 @@
 [submodule "vim/pack/plugins/start/vim-caddyfile"]
 	path = vim/pack/plugins/start/vim-caddyfile
 	url = https://github.com/joshglendenning/vim-caddyfile
+[submodule "vim/pack/plugins/start/bufexplorer"]
+	path = vim/pack/plugins/start/bufexplorer
+	url = https://github.com/jlanzarotta/bufexplorer.git
