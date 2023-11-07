@@ -155,5 +155,6 @@ then
 
   complete -o default -F __start_kubectl k
 fi
-alias myip='curl -s "https://api.ipify.org"'
+alias myip='curl -s "https://api.ipify.org";echo'
+alias whatsmyip='curl ifconfig.me;echo'
 
