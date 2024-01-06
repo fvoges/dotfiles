@@ -70,4 +70,8 @@ Note to self: `git submodule update --remote --merge`
 The repo now includes [ALE](https://github.com/dense-analysis/ale), so now you can add the Puppet Language Server and have a modern code editor experience. See [this Vox Pupuli article](https://voxpupuli.org/blog/2019/04/08/puppet-lsp-vim/) for more information.
 
 
+## Update submodules
 
+```shell
+git submodule update --remote --merge
+```
