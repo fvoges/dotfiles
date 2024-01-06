@@ -14,6 +14,8 @@ alias h="history"
 alias psu="ps -fu $USER"
 alias be="bundle exec"
 
+test -d /opt/homebrew && PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
+
 # Mac OS X
 if [ "$(uname -s)" == "Darwin" ]
 then
@@ -67,7 +69,7 @@ then
 fi
 
 case "$SHELL" in
-  */bin/bash)
+  */bash)
     # Change the window title of X terminals
     case ${TERM} in
       xterm*|rxvt*|Eterm|aterm|kterm|gnome*|interix)
