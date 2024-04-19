@@ -7,6 +7,7 @@ test -f ~/.bashrc.local && source ~/.bashrc.local
 
 export EDITOR=vim
 
+alias l="ls -F"
 alias ls="ls --color=auto"
 alias ll="ls -al"
 alias vi="vim"
@@ -161,4 +162,11 @@ then
 fi
 alias myip='curl -s "https://api.ipify.org";echo'
 alias whatsmyip='curl ifconfig.me;echo'
+
+if type -p exa >& /dev/null
+then
+  alias ls='exa'
+  alias la='ls -laa'
+fi
+
 
