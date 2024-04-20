@@ -167,6 +167,10 @@ if type -p exa >& /dev/null
 then
   alias ls='exa'
   alias la='ls -laa'
+elif type -p eza >& /dev/null
+then
+  alias ls='eza'
+  alias la='ls -laa'
 fi
 
 
