@@ -183,12 +183,5 @@ then
   alias la='ls -laa'
 fi
 
-
-if type -p eza >& /dev/null
-then
-  alias ls='eza'
-  alias la='ls -laa'
-fi
-
 type -p bat >& /dev/null  && alias cat='bat'
 
