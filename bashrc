@@ -15,7 +15,10 @@ alias h="history"
 alias psu="ps -fu $USER"
 alias be="bundle exec"
 
+test -f /etc/bash_completion && source /etc/bash_completion
+
 test -d /opt/homebrew && PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Mac OS X
 if [ "$(uname -s)" == "Darwin" ]
@@ -43,11 +46,16 @@ then
     test -f "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" && source "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
   fi
 else
+  which brew >& /dev/null
+  if [ $? -eq 0 ]
+  then
+    BREW_PREFIX=$(brew --prefix)
+    [[ -r "${BREW_PREFIX}}/etc/profile.d/bash_completion.sh" ]] && . "${BREW_PREFIX}}/etc/profile.d/bash_completion.sh"
+  fi
+
   PATH="${PATH//\/usr\/local\/bin:}:/usr/local/bin"
   PATH="${PATH//\/usr\/local\/sbin:}:/usr/local/sbin"
 fi
-
-test -f /etc/bash_completion && source /etc/bash_completion
 
 # autocomplete for all the hashicorp tools
 test -x /usr/local/bin/boundary && complete -C /usr/local/bin/boundary boundary 2>&1 /dev/null
@@ -169,4 +177,12 @@ then
   alias la='ls -laa'
 fi
 
+
+if type -p eza >& /dev/null
+then
+  alias ls='eza'
+  alias la='ls -laa'
+fi
+
+type -p bat >& /dev/null  && alias cat='bat'
 
