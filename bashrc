@@ -173,7 +173,13 @@ alias whatsmyip='curl ifconfig.me;echo'
 
 if type -p exa >& /dev/null
 then
+  export EXA_ICONS_AUTO=1
   alias ls='exa'
+  alias la='ls -laa'
+elif type -p eza >& /dev/null
+then
+  export EZA_ICONS_AUTO=1
+  alias ls='eza'
   alias la='ls -laa'
 fi
 
