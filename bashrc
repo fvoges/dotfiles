@@ -14,6 +14,8 @@ alias vi="vim"
 alias h="history"
 alias psu="ps -fu $USER"
 alias be="bundle exec"
+alias tf='terraform'
+alias tfyolo='terraform apply -auto-approve'
 
 test -f /etc/bash_completion && source /etc/bash_completion
 
@@ -184,4 +186,7 @@ then
 fi
 
 type -p bat >& /dev/null  && alias cat='bat'
+#type -p zoxide >& /dev/null && eval "$(zoxide init --cmd cd bash)"
 
+test -f ~/.do_token && export DIGITALOCEAN_TOKEN="$(cat ~/.do_token)"
+test -f ~/.tailscale_env && source ~/.tailscale_env
