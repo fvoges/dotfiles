@@ -55,22 +55,17 @@ git config -f ~/.gitconfig.local user.email 'Your.Name@example.com'
 
 Because I tend to install this on every account, even temporary ones. So I don't what to depend on any external package. It has to work on Ubuntu, Debian, Gentoo, SLES, Mac OS, Cygwin. On current versions as well as old ones.
 
-
 ## Why not use plugin manager for Vim?
 
 ~~Because I tend to install this on every account. I want to keep it as simple to install as possible.~~
 
 Well.. I've finally migrated to a plugin manager. The config now uses the built-in plugin support for VIM 8.0+
 
-Note to self: `git submodule update --remote --merge`
-
-
 ## Puppet setup
 
 The repo now includes [ALE](https://github.com/dense-analysis/ale), so now you can add the Puppet Language Server and have a modern code editor experience. See [this Vox Pupuli article](https://voxpupuli.org/blog/2019/04/08/puppet-lsp-vim/) for more information.
 
-
-## Update submodules
+## Update all git submodules to latest upstream version
 
 ```shell
 git submodule update --remote --merge
