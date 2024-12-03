@@ -58,6 +58,7 @@ else
   PATH="${PATH//\/usr\/local\/bin:}:/usr/local/bin"
   PATH="${PATH//\/usr\/local\/sbin:}:/usr/local/sbin"
 fi
+export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # autocomplete for all the hashicorp tools
 test -x /usr/local/bin/boundary && complete -C /usr/local/bin/boundary boundary 2>&1 /dev/null
