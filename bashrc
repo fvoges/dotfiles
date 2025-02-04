@@ -191,3 +191,5 @@ type -p bat >& /dev/null  && alias cat='bat'
 
 test -f ~/.do_token && export DIGITALOCEAN_TOKEN="$(cat ~/.do_token)"
 test -f ~/.tailscale_env && source ~/.tailscale_env
+test -f ~/.github_env && source ~/.github_env
+
