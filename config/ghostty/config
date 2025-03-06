@@ -565,7 +565,7 @@ palette = 254=#e4e4e4
 palette = 255=#eeeeee
 
 # The color of the cursor. If this is not set, a default will be chosen.
-cursor-color =
+cursor-color = #00ff00
 
 # Swap the foreground and background colors of the cell under the cursor. This
 # option overrides the `cursor-color` and `cursor-text` options.
@@ -584,7 +584,7 @@ cursor-opacity = 1
 #
 # Note that shell integration will automatically set the cursor to a bar at
 # a prompt, regardless of this configuration. You can disable that behavior
-# by specifying `shell-integration-features = no-cursor` or disabling shell
+# by specifying `shell-integration-features = no-no-cursor` or disabling shell
 # integration entirely.
 #
 # Valid values are:
@@ -1397,7 +1397,7 @@ image-storage-limit = 320000000
 # select behavior is not typical for applications so it is disabled by
 # default. On Linux, this is a standard behavior so it is enabled by
 # default.
-copy-on-select = true
+copy-on-select = clipboard
 
 # The time in milliseconds between clicks to consider a click a repeat
 # (double, triple, etc.) or an entirely new single click. A value of zero will
@@ -1575,7 +1575,7 @@ shell-integration = detect
 #   * `title` - Set the window title via shell integration.
 #
 # Example: `cursor`, `no-cursor`, `sudo`, `no-sudo`, `title`, `no-title`
-shell-integration-features = cursor,no-sudo,title
+shell-integration-features = no-cursor,no-sudo,title
 
 # Sets the reporting format for OSC sequences that request color information.
 # Ghostty currently supports OSC 10 (foreground), OSC 11 (background), and
