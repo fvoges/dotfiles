@@ -1,24 +1,5 @@
-[gpg]
-  program = gpg2
-[credential]
-	helper = cache
-[core]
-	editor = vim
-  excludesfile = ~/.gitignore_global
-	autocrlf = input
-[merge]
-	tool = vimdiff
-[color]
-	diff = auto
-	ui = auto
-[filter "media"]
-  required = true
-  clean = git media clean %f
-  smudge = git media smudge %f
-[mergetool]
-	keepbackup = true
-[push]
-  default = simple
+# some options taken from here: https://blog.gitbutler.com/how-git-core-devs-configure-git/
+
 [alias]
   a = add
   aa = add -A
@@ -60,30 +41,105 @@
   s = status
   tree = log --oneline --decorate --graph
   undo-commit = reset --soft HEAD^
-[gitflow "prefix"]
-  feature = feature/
-  release = release/
-  hotfix = hotfix/
-  support = support/
-  versiontag = v
-[fetch]
-	prune = true
+
+[branch]
+  sort = -committerdate
+
+[column]
+  ui = auto
+
+[commit]
+  verbose = true
+
+[core]
+	autocrlf = input
+	editor = vim
+  excludesfile = ~/.gitignore_global
+  # fsmonitor = true
+  # untrackedCache = true
+
+[color]
+	diff = auto
+	ui = auto
+
 [color "diff"]
   whitespace = red reverse
-[filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
-  required = true
-[include]
-  path = ~/.gitconfig.local
+
+[credential]
+	helper = cache
+
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+	tool = vimdiff
 
 [difftool]
 	prompt = false
-[diff]
-	tool = vimdiff
-[pull]
-	rebase = false
-[init]
-	defaultBranch = main
+
+[fetch]
+  all = true
+  prune = true
+  pruneTags = true
+
+[filter "lfs"]
+  clean = git-lfs clean %f
+  required = true
+  smudge = git-lfs smudge %f
+
+[filter "media"]
+  clean = git media clean %f
+  required = true
+  smudge = git media smudge %f
+
+[gitflow "prefix"]
+  feature = feature/
+  hotfix = hotfix/
+  release = release/
+  support = support/
+  versiontag = v
+
+[gpg]
+  program = gpg2
+
+[help]
+  autocorrect = prompt
+
 [hub]
 	protocol = ssh
+
+[include]
+  path = ~/.gitconfig.local
+
+[init]
+	defaultBranch = main
+
+[merge]
+  # (just 'diff3' if git version < 2.3)
+  conflictstyle = zdiff3
+	tool = vimdiff
+
+[mergetool]
+	keepbackup = true
+
+[pull]
+	rebase = false
+
+[push]
+  autoSetupRemote = true
+  default = simple
+  followTags = true
+
+[rebase]
+  autoSquash = true
+  autoStash = true
+  updateRefs = true
+
+[rerere]
+  autoupdate = true
+  enabled = true
+
+[tag]
+  sort = version:refname
+
