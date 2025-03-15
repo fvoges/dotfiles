@@ -71,6 +71,7 @@ test -x /usr/local/bin/vault && complete -C /usr/local/bin/vault vault 2>&1 /dev
 test -x /usr/local/bin/waypoint && complete -C /usr/local/bin/waypoint waypoint 2>&1 /dev/null
 
 PATH="${PATH//:$HOME\/bin}:$HOME/bin"
+PATH="${PATH//:$HOME\/.local\/bin}:$HOME/.local/bin"
 
 test -d "${HOME}/.rbenv" && PATH="${PATH}:${HOME}/.rbenv/bin"
 
