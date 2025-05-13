@@ -188,6 +188,7 @@ then
 fi
 
 type -p bat >& /dev/null  && alias cat='bat'
+type -p batcat >& /dev/null  && alias cat='batcat'
 #type -p zoxide >& /dev/null && eval "$(zoxide init --cmd cd bash)"
 
 test -f ~/.do_token && export DIGITALOCEAN_TOKEN="$(cat ~/.do_token)"
