@@ -117,7 +117,8 @@
 
 [merge]
   # (just 'diff3' if git version < 2.3)
-  conflictstyle = zdiff3
+  # conflictstyle = zdiff3
+  conflictstyle = diff3
 	tool = vimdiff
 
 [mergetool]
