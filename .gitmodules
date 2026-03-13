@@ -106,3 +106,6 @@
 [submodule "vim/pack/plugins/start/vim-hocon"]
 	path = vim/pack/plugins/start/vim-hocon
 	url = https://github.com/jvirtanen/vim-hocon.git
+[submodule "vim/pack/plugins/start/ini-syntax-definition"]
+	path = vim/pack/plugins/start/ini-syntax-definition
+	url = https://github.com/vim-scripts/ini-syntax-definition.git

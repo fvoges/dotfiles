@@ -25,6 +25,9 @@ set number
 " JJM Highlight extra white space.
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 
+autocmd BufRead,BufNewFile *.conf setfiletype hocon
+autocmd BufRead,BufNewFile */ghostty/config,*.ini setfiletype ini
+
 " Features supported on vim 7.3+
 if v:version >= 703
   " Give an indicator when we approach col 80 (>72)
