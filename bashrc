@@ -109,7 +109,7 @@ function start_agent {
   echo succeeded
   chmod 600 ${SSH_ENV}
   . ${SSH_ENV} >& /dev/null
-  ssh-add;
+  /usr/bin/ssh-add
 }
 
 if [ -t 0 ]
