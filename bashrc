@@ -163,17 +163,23 @@ export HISTTIMEFORMAT="%F %T "
 test -f /usr/local/etc/bash_completion.d/git-completion.bash && source /usr/local/etc/bash_completion.d/git-completion.bash
 
 # Check for kubectl
-if which kubectl >& /dev/null
+if type -p kubectl >& /dev/null
 then
   # from: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
   alias k=kubectl
   alias kx='f() { [ "$1" ] && kubectl config use-context $1 || kubectl config current-context ; } ; f'
   alias kn='f() { [ "$1" ] && kubectl config set-context --current --namespace $1 || kubectl config view --minify | grep namespace | cut -d" " -f6 ; } ; f'
 
-  complete -o default -F __start_kubectl k
+  # complete -o default -F __start_kubectl k
+  source <(kubectl completion bash)
 fi
 alias myip='curl -s "https://api.ipify.org";echo'
 alias whatsmyip='curl ifconfig.me;echo'
+
+if type -p talosctl >& /dev/null
+then
+  source <(talosctl completion bash)
+fi
 
 if type -p exa >& /dev/null
 then
