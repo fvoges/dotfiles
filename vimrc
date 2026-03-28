@@ -146,3 +146,6 @@ while c <= 99
 endwhile
 " END https://vim.fandom.com/wiki/Easier_buffer_switching
 
+" Disable go version warnings
+let g:go_version_warning = 0
+
