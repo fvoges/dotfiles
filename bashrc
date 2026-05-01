@@ -207,3 +207,6 @@ then
   eval "$(direnv hook bash)"
 fi
 
+# Disable GH CLI telemetry. See: https://cli.github.com/telemetry
+export GH_TELEMETRY=false
+export DO_NOT_TRACK=true
